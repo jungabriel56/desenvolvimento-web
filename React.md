@@ -56,4 +56,7 @@ const Teste = () => {
 4. Não é um componente, pois não começa com letra maiúscula
 5. É um componente, pois começa com a letra maiúscula e retorna um JSX
 
+## Fluxo de Renderização
+
+
 
