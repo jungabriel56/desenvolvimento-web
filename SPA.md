@@ -1,0 +1,1 @@
+A estrutura SPA, que significa Single Page Application, é baseada em uma aplicação com uma única página.
