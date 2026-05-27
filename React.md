@@ -84,4 +84,33 @@ Quando o estado é atualizado, ocorre o fluxo de renderização, que é dividido
 ### 3. Commit
 - O React aplica as mudanças calculadas no DOM real do navegador, atualizando a interface visual que o usuário vê.
 ## Listas
-Quando utilizar listas no React, é uma boa prática utilizar a propriedade key em elementos `<li>`. 
+Quando utilizar listas no React, é uma boa prática utilizar a propriedade key em elementos `<li>`. A key serve para identificar quais itens foram atualizados, adicionados e removidos durante a reconciliação do Virtual DOM. 
+Ao utilizar a key, o React:
+- Otimiza a performance, pois atualiza apenas os elementos modificados ao invés de re-renderizar todos os elementos.
+- Mantém o estado correto, evitando problemas como a perda de foco em inputs ou comportamento inesperado de componentes quando a ordem dos itens é alterada.
+### Exemplo
+```
+import { useState } from "react";
+
+export function App() {
+
+ const [list, setList] = useState([
+  'Fazer café',
+  'Fazer almoço',
+  'Fazer jantar'
+ ]);
+
+  return (
+    <div>
+      <input type="text" />
+      <button>Adicionar</button>
+     
+      <ol>
+        {list.map((listItem: string) => (
+          <li key={listItem}>{listItem}</li>
+        ))}
+      </ol>
+    </div>
+  )
+}
+```
