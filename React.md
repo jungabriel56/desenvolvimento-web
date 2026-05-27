@@ -61,26 +61,19 @@ O useState() serve para guardar o estado de uma variável
 ```
 import { useState } from 'react'
 
-  
-
 export function App() {
-
   const [count, setCount] = useState(0)
 
-  
-
   return (
-
     <div>
-
       <button onClick={() => setCount(count + 1)}>{count}</button>
-
     </div>
-
   )
-
 }
 ```
-
-Quando o estado é atualizado, é realizado o fluxo de renderização, que é dividido em t
+No exemplo acima, temos o parâmetro 0 no useState que é o valor definido para a  .
+### Fluxo de Renderização com useState()
+Quando o estado é atualizado, ocorre o fluxo de renderização, que é dividido em três etapas:
+### 1. Trigger
+ - O processo inicia quando a função de atualização do useState é chamada.
 
