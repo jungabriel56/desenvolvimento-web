@@ -83,3 +83,5 @@ Quando o estado é atualizado, ocorre o fluxo de renderização, que é dividido
 	- O React compara o novo JSX com o anterior (Virtual DOM) para calcular as diferenças.
 ### 3. Commit
 - O React aplica as mudanças calculadas no DOM real do navegador, atualizando a interface visual que o usuário vê.
+## Listas
+Quando utilizar listas no React, é uma boa prática utilizar a propriedade key em elementos `<li>`. 
