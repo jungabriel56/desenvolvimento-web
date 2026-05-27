@@ -56,7 +56,30 @@ const Teste = () => {
 4. Não é um componente, pois não começa com letra maiúscula
 5. É um componente, pois começa com a letra maiúscula e retorna um JSX
 
-## Fluxo de Renderização
+## Contador utilizando useState()
+```
+import { useState } from 'react'
+
+  
+
+export function App() {
+
+  const [count, setCount] = useState(0)
+
+  
+
+  return (
+
+    <div>
+
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+
+    </div>
+
+  )
+
+}
+```
 
 
 
