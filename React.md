@@ -71,7 +71,7 @@ export function App() {
   )
 }
 ```
-No exemplo acima, temos o parâmetro 0 no useState que é o valor definido para a  .
+No exemplo acima, temos o parâmetro 0 no useState que é o valor definido para a renderização inicial este valor é definido como inicialState. O count seria o estado atual. O setCount é a função que altera o estado do count para um outro valor e ativa uma re-renderização.
 ### Fluxo de Renderização com useState()
 Quando o estado é atualizado, ocorre o fluxo de renderização, que é dividido em três etapas:
 ### 1. Trigger
