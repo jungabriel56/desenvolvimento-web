@@ -75,5 +75,11 @@ No exemplo acima, temos o parâmetro 0 no useState que é o valor definido para 
 ### Fluxo de Renderização com useState()
 Quando o estado é atualizado, ocorre o fluxo de renderização, que é dividido em três etapas:
 ### 1. Trigger
- - O processo inicia quando a função de atualização do useState é chamada.
-
+ - O processo inicia quando a função de atualização do useState é chamada, mas o estado ainda não é atualizado e permanece até o próximo ciclo. 
+### 2. Renderização
+- O React executa novamente a função do componente. É neste momento que:
+	- O useState retorna o novo valor do estado
+	- Todo o código do componente é reexecutado para gerar o novo JSX.
+	- O React compara o novo JSX com o anterior (Virtual DOM) para calcular as diferenças.
+### 3. Commit
+- O React aplica as mudanças calculadas no DOM real do navegador, atualizando a interface visual que o usuário vê.
