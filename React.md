@@ -57,6 +57,7 @@ const Teste = () => {
 5. É um componente, pois começa com a letra maiúscula e retorna um JSX
 
 ## Contador utilizando useState()
+O useState() serve para guardar o estado de uma variável
 ```
 import { useState } from 'react'
 
