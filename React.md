@@ -82,5 +82,5 @@ export function App() {
 }
 ```
 
-
+Quando o estado é atualizado, é realizado o fluxo de renderização, que é dividido em t
 
