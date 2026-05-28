@@ -89,6 +89,7 @@ Ao utilizar a key, o React:
 - Otimiza a performance, pois atualiza apenas os elementos modificados ao invés de re-renderizar todos os elementos.
 - Mantém o estado correto, evitando problemas como a perda de foco em inputs ou comportamento inesperado de componentes quando a ordem dos itens é alterada.
 ### Exemplo
+
 ``` tsx
 import { useState } from "react";
 
@@ -117,6 +118,7 @@ export function App() {
 }
 ```
 ### Adição de itens dinamicamente na lista
+
 ``` tsx
 import { useState } from "react";
 
