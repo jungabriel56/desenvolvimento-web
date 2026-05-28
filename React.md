@@ -92,24 +92,32 @@ Ao utilizar a key, o React:
 ```
 import { useState } from "react";
 
+  
+
 export function App() {
 
  const [list, setList] = useState([
-  'Fazer café',
-  'Fazer almoço',
-  'Fazer jantar'
+  {id: 1, label: 'Fazer café'},
+  {id: 2, label: 'Fazer café'},
+  {id: 3, label: 'Fazer almoço'},
+  {id: 4, label: 'Fazer jantar'}
  ]);
+
+  
+  
+  
 
   return (
     <div>
       <input type="text" />
       <button>Adicionar</button>
-     
+
       <ol>
-        {list.map((listItem: string) => (
-          <li key={listItem}>{listItem}</li>
+        {list.map((listItem: {id: number, label: string}) => (
+          <li key={listItem.id}>{listItem.label}</li>
         ))}
       </ol>
+      
     </div>
   )
 }
