@@ -18,7 +18,7 @@ Para funcionar corretamente, os Hooks devem ser chamados **apenas no nível mai
 
 ## Exemplos
 
-```
+``` tsx
 // 1) Função JS
 const teste = () => {
   return 1 + 1;
@@ -58,7 +58,7 @@ const Teste = () => {
 
 ## Contador utilizando useState()
 O useState() serve para guardar o estado de uma variável
-```
+``` tsx
 import { useState } from 'react'
 
 export function App() {
@@ -89,7 +89,7 @@ Ao utilizar a key, o React:
 - Otimiza a performance, pois atualiza apenas os elementos modificados ao invés de re-renderizar todos os elementos.
 - Mantém o estado correto, evitando problemas como a perda de foco em inputs ou comportamento inesperado de componentes quando a ordem dos itens é alterada.
 ### Exemplo
-```
+``` tsx
 import { useState } from "react";
 
 export function App() {
@@ -100,10 +100,6 @@ export function App() {
   {id: 3, label: 'Fazer almoço'},
   {id: 4, label: 'Fazer jantar'}
  ]);
-
-  
-  
-  
 
   return (
     <div>
@@ -121,7 +117,7 @@ export function App() {
 }
 ```
 ### Adição de itens dinamicamente na lista
-```
+``` tsx
 import { useState } from "react";
 
 export function App() {
