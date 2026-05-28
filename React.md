@@ -121,3 +121,36 @@ export function App() {
 }
 ```
 ### Adição de itens dinamicamente na lista
+```
+import { useState } from "react";
+
+export function App() {
+  const [value, setValue] = useState('')
+ const [list, setList] = useState([
+  {id: 1, label: 'Fazer café'},
+  {id: 2, label: 'Fazer café'},
+  {id: 3, label: 'Fazer almoço'},
+  {id: 4, label: 'Fazer jantar'}
+ ]);
+
+  
+  
+  
+
+  return (
+    <div>
+      <input type="text" value={value} onChange={(e) => setValue(e.target.value)}/>
+      <button onClick={() => {
+	        setList([...list,{id: (list.length + 1), label: value}])
+	        setValue('')
+	      }
+      }>Adicionar</button>
+      <ol>
+        {list.map((listItem: {id: number, label: string}) => (
+          <li key={listItem.id}>{listItem.label}</li>
+        ))}
+      </ol>
+    </div>
+  )
+}
+```
