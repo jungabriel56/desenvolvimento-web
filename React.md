@@ -92,8 +92,6 @@ Ao utilizar a key, o React:
 ```
 import { useState } from "react";
 
-  
-
 export function App() {
 
  const [list, setList] = useState([
