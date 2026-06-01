@@ -214,3 +214,5 @@ export function App() {
   );
 }
 ```
+## Properties (Props)
+As props são argumentos passados para componentes React. São como parâmetros de funções.
