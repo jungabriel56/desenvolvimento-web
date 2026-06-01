@@ -215,4 +215,58 @@ export function App() {
 }
 ```
 ## Properties (Props)
-As props são argumentos passados para componentes React. São como parâmetros de funções e podem ser de três tipos: Primitivos, Complexos e de Renderização. 
+As props são argumentos passados para componentes React. São como parâmetros de funções e podem ser de três tipos: [[Tipos Primitivos]], [[Tipos Complexos]] e [[Tipos funcionais e de Renderização]].
+```TSX
+import { useState } from "react";
+import { InputAdd } from "./components/InputAdd";
+
+export function App() {
+  const [list, setList] = useState([
+    { id: 1, label: "Fazer café", completed: false },
+    { id: 2, label: "Fazer café", completed: false },
+    { id: 3, label: "Fazer almoço", completed: false },
+    { id: 4, label: "Fazer jantar", completed: false },
+  ]);
+
+  return (
+    <div>
+      <InputAdd
+        onAdd={(value) => {setList([...list,
+          {id: (list.length + 1), completed: false, label: value}])}}
+      />
+
+      <ol>
+        {list.map(
+          (listItem: { id: number; label: string; completed: boolean }) => (
+            <li key={listItem.id}>
+              {listItem.label}
+              {listItem.completed ? "Concluido" : ""}
+
+              <button
+                onClick={() =>
+                  setList([
+                    ...list.map((item) => ({
+                      ...item,
+                      completed:
+                        item.id === listItem.id ? true : item.completed,
+                    })),
+                  ])
+                }
+              >
+               Concluir
+              </button>
+              <button
+                onClick={() =>
+                  setList([...list.filter((item) => item.id !== listItem.id)])
+                }
+              >
+                Remover
+              </button>
+            </li>
+          ),
+        )}
+      </ol>
+    </div>
+  );
+}
+```
