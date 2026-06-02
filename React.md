@@ -297,3 +297,91 @@ export const InputAdd = (props: InputAddProps) => {
     )
 }
 ```
+## Refatorações
+```tsx
+import { useState } from "react";
+import { InputAdd } from "./components/InputAdd";
+
+export function App() {
+  const [list, setList] = useState([
+    { id: 1, label: "Fazer café", completed: false },
+    { id: 2, label: "Fazer café", completed: false },
+    { id: 3, label: "Fazer almoço", completed: false },
+    { id: 4, label: "Fazer jantar", completed: false },
+  ]);
+
+  const handleAdd = (value: string) => {
+    setList([...list,
+          {id: (list.length + 1), completed: false, label: value}])
+  }
+
+  return (
+    <div>
+     <InputAdd onAdd={handleAdd}/>
+      <ol>
+        {list.map(
+          (listItem: { id: number; label: string; completed: boolean }) => (
+            <li key={listItem.id}>
+              {listItem.label}
+
+              {listItem.completed ? "Concluido" : ""}
+              
+              <button
+                onClick={() =>
+                  setList([
+                    ...list.map((item) => ({
+                      ...item,
+                      completed:
+                        item.id === listItem.id ? true : item.completed,
+                    })),
+                  ])
+                }
+              >
+                Concluir
+              </button>
+              <button
+                onClick={() =>
+                  setList([...list.filter((item) => item.id !== listItem.id)])
+                }
+              >
+                Remover
+              </button>
+            </li>
+          ),
+        )}
+      </ol>
+    </div>
+  );
+}
+```
+```tsx
+import { useState } from "react";
+
+interface InputAddProps {
+  onAdd(value: string): void;
+}
+
+export const InputAdd = (props: InputAddProps) => {
+    const [value, setValue] = useState("");
+    const handleAdd = () => {
+      props.onAdd(value);
+      setValue("")
+    }
+
+    return (
+        <div>
+            <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+
+      <button
+        onClick={() => {handleAdd();}}
+      >
+        Adicionar
+      </button>
+        </div>
+    )
+}
+```
