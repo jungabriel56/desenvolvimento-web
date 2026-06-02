@@ -385,3 +385,4 @@ export const InputAdd = (props: InputAddProps) => {
     )
 }
 ```
+Adição de event handlers (handleAdd), que são responsáveis por gerenciar as interações dos usuários
