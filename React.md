@@ -388,4 +388,4 @@ export const InputAdd = (props: InputAddProps) => {
 Adição de event handlers (handleAdd), que são responsáveis por gerenciar e responder as interações dos usuários
 
 ## useEffect
-O useEffect é um React hook que permite executar efeitos colaterais em componentes.
+O useEffect é um React hook que permite executar efeitos colaterais em componentes. Ele faz chamadas de API, interaç
