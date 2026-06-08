@@ -1,4 +1,4 @@
-Quado o useEffect é utilizado com dependências, ele será executado toda vez que um dos valores passados mudar. Isso é utilizado para melhorar o desempenho da aplicação, de modo que uma ação seja executada apenas quando for necessário.
+Quando o useEffect é utilizado com um array de dependências, ele é executado após a primeira renderização e novamente sempre que uma das dependências mudar. Isso permite controlar quando um efeito colateral deve ser executado, evitando execuções desnecessárias.
 ### Exemplo
 ```tsx
 const [nome, setNome] = useState('');

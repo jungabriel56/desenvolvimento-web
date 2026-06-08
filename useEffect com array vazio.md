@@ -1,4 +1,4 @@
-Quando o useEffect é utilizado com um array vazio como parâmetro, ele é executado apenas na montagem do componente. Ou seja, apenas na primeira vez que o componente for renderizado.
+Quando o useEffect é utilizado com um array vazio como dependência, ele é executado após a montagem do componente, ou seja, após a primeira renderização. Em produção, esse efeito normalmente roda uma vez durante a montagem.
 ### Exemplo
 ```tsx
 useEffect(() => {
