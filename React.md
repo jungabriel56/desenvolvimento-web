@@ -389,3 +389,131 @@ Adição de event handlers (handleAdd), que são responsáveis por gerenciar e r
 
 ## useEffect
 O useEffect é um React hook que permite executar efeitos colaterais em componentes. Ele faz chamadas de API, interações com o DOM e *event listening*. Ele pode ser utilizado de 3 maneiras distintas [[useEffect sem argumentos]], [[useEffect com array vazio]] e [[useEffect com array de dependências]]
+```tsx
+import { useState, useEffect } from "react";
+import { InputAdd } from "./components/InputAdd";
+import { ToDoItem } from "./components/ToDoItem";
+import { List } from "./components/List";
+import { ToDoAPI, type IToDo } from "./shared/services/api/ToDoAPI";
+
+export function App() {
+
+  const [list, setList] = useState<IToDo[]>([]);
+
+  useEffect(() => {
+    ToDoAPI.getAll()
+      .then(data => setList(data));
+  }, []);
+
+  const handleAdd = (value: string) => {
+    ToDoAPI.create({ label: value, completed: false})
+    .then(data => setList([...list, data]))
+  };
+
+  const handleComplete = (id: number) => {
+    ToDoAPI.updateById(id, {completed: true}).then(() => {
+      setList([
+        ...list.map((item) => ({
+          ...item,
+          completed: item.id === id ? true : item.completed,
+        })),
+      ]);
+    })
+  };
+
+
+  const handleRemove = (id: number) => {
+    
+    ToDoAPI.deleteById(id).then(() => {
+      setList([...list.filter((item) => item.id !== id)]);
+
+    })
+  };
+
+  return (
+    <div>
+      <InputAdd onAdd={handleAdd} />
+
+      <List>
+        {list.map(
+          (listItem: { id: number; label: string; completed: boolean }) => (
+            <ToDoItem
+              key={listItem.id}
+              id={listItem.id}
+              label={listItem.label}
+              completed={listItem.completed}
+              onComplete={() => handleComplete(listItem.id)}
+              onRemove={() => handleRemove(listItem.id)}
+            />
+          ),
+        )}
+      </List>
+    </div>
+  );
+}
+
+```
+```tsx
+import { createServer, Model } from 'miragejs'
+
+createServer({
+    models: {
+        toDos: Model
+    },
+    seeds(server){
+        const toDosAsString = localStorage.getItem('MOCK_TODOS');
+        if(toDosAsString === null) return;
+
+        const toDos = JSON.parse(toDosAsString);
+        console.log(toDos)
+
+        toDos.models.forEach((toDo: {}) => server.schema.create('toDos', toDo))
+    },
+    routes() {
+        this.namespace = 'api';
+
+        this.get('/toDos', () => {
+            return this.schema.all('toDos');
+        });
+
+        this.post('/toDos', (schema, request) => {
+            const attrs = JSON.parse(request.requestBody);
+
+            const toDo = schema.create('toDos', attrs);
+
+            const toDos = schema.all("toDos");
+            localStorage.setItem('MOCK_TODOS', JSON.stringify(toDos))
+
+            return toDo;
+        });
+
+        this.delete('/toDos/:id',(schema, request) => {
+            const id = request.params.id;
+            
+            const toDo = schema.find('toDos', id);
+            toDo?.destroy()
+
+            const toDos = schema.all("toDos");
+            localStorage.setItem('MOCK_TODOS', JSON.stringify(toDos))
+
+            return {}
+        });
+
+        this.put('/toDos/:id', (schema, request) => {
+            const id = request.params.id;
+
+            const newAttrs = JSON.parse(request.requestBody)
+
+            const toDo = schema.find('toDos', id)
+            toDo?.update(newAttrs)
+
+            const toDos = schema.all("toDos");
+            localStorage.setItem('MOCK_TODOS', JSON.stringify(toDos))
+
+            return {}
+        })
+    },
+
+})
+```
+
