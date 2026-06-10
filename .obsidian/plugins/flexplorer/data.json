@@ -1,0 +1,89 @@
+{
+  "items": {
+    "/": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "React.md",
+        "componentes.md",
+        "JSX.md",
+        "Node.md",
+        "npm.md",
+        "SPA.md",
+        "Tipos Complexos.md",
+        "Tipos Primitivos.md",
+        "useEffect com array de dependências.md",
+        "useEffect com array vazio.md",
+        "Tipos funcionais e de Renderização.md",
+        "useEffect sem argumentos.md",
+        "Imagens"
+      ]
+    },
+    "componentes.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "JSX.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Node.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "npm.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "SPA.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Tipos Complexos.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Tipos Primitivos.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "useEffect com array de dependências.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "useEffect com array vazio.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Tipos funcionais e de Renderização.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "useEffect sem argumentos.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Imagens": {
+      "isPinned": false,
+      "isHidden": false,
+      "customOrder": [
+        "ImagemComponenteComCssModule.png"
+      ],
+      "sortOrder": "custom"
+    },
+    "React.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Imagens/ImagemComponenteComCssModule.png": {
+      "isPinned": false,
+      "isHidden": false
+    }
+  },
+  "pinnedFiles": [],
+  "showHidden": false,
+  "newItemPlacement": "top",
+  "persistOrderOnCreateDelete": true,
+  "debugMode": false
+}

@@ -519,3 +519,5 @@ createServer({
 
 ## Estilização
 A estilização em React pode ser diferente do CSS tradicional porque o uso de CSS global pode gerar conflitos em aplicações baseadas em componentes reutilizáveis. Uma boa prática para evitar esse problema é utilizar CSS Modules, que escopam os estilos a componentes específicos, reduzindo colisões entre classes CSS.
+### Exemplo
+![[ImagemComponenteComCssModule.png|274]]

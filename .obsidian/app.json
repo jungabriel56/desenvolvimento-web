@@ -1,3 +1,4 @@
 {
-  "autoConvertHtml": false
+  "autoConvertHtml": false,
+  "alwaysUpdateLinks": true
 }
