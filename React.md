@@ -589,4 +589,120 @@ export const InputAdd = (props: InputAddProps) => {
 };
 ```
 ## Routing
-A seguir, vamos adicionar rotas para as páginas da aplicação utilizando a biblioteca **React Router**.
+A seguir, vamos adicionar rotas para as páginas da aplicação utilizando a biblioteca **React Router**. As rotas serão a Página Inicial e a página Sobre.
+```tsx
+import { PageLayout } from "../shared/layout/page-layout/PageLayout"
+
+export const About = () => {
+
+
+    return (
+        <div>
+            <PageLayout title="Sobre" >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique at minus ratione harum repellat molestias ut quam id repellendus?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique at minus ratione harum repellat molestias ut quam id repellendus?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque similique at minus ratione harum repellat molestias ut quam id repellendus?</p>
+            </PageLayout>
+        </div>
+    )
+}
+```
+```tsx
+import { useEffect, useState } from "react";
+import { ToDoAPI, type IToDo } from "../shared/services/api/ToDoAPI";
+import { InputAdd } from "../components/InputAdd";
+import { List } from "../components/List";
+import { ToDoItem } from "../components/ToDoItem";
+import { PageLayout } from "../shared/layout/page-layout/PageLayout";
+
+
+export const Home = () => {
+   const [list, setList] = useState<IToDo[]>([]);
+   
+     useEffect(() => {
+       ToDoAPI.getAll()
+         .then(data => setList(data));
+     }, []);
+   
+     const handleAdd = (value: string) => {
+   
+       ToDoAPI.create({ label: value, completed: false})
+       .then(data => setList([...list, data]))
+     };
+   
+     const handleComplete = (id: number) => {
+       ToDoAPI.updateById(id, {completed: true}).then(() => {
+         setList([
+           ...list.map((item) => ({
+             ...item,
+             completed: item.id === id ? true : item.completed,
+           })),
+         ]);
+   
+       })
+   
+     };
+   
+   
+     const handleRemove = (id: number) => {
+       
+       ToDoAPI.deleteById(id).then(() => {
+         setList([...list.filter((item) => item.id !== id)]);
+   
+       })
+     };
+   
+     return (
+       <PageLayout title="TODO List">
+         <InputAdd onAdd={handleAdd} />
+   
+         <List>
+           {list.map(
+             (listItem: { id: number; label: string; completed: boolean }) => (
+               <ToDoItem
+                 key={listItem.id}
+                 id={listItem.id}
+                 label={listItem.label}
+                 completed={listItem.completed}
+                 onComplete={() => handleComplete(listItem.id)}
+                 onRemove={() => handleRemove(listItem.id)}
+               />
+             ),
+           )}
+         </List>
+       </PageLayout>
+     );
+    
+};
+```
+As modificações são feitas no componente principal, o App
+```tsx 
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+
+import { About } from "./pages/About";
+import { Home } from "./pages/Home";
+import { AppLayout } from "./shared/layout/AppLayout";
+
+export function App() {
+
+  return (
+    <BrowserRouter>
+      <AppLayout>
+        
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path="/sobre" element={<About />}/>
+
+          <Route path="*" element={<Navigate to='/'/>}/>
+        </Routes>
+        
+      </AppLayout>
+    </BrowserRouter>
+  )
+}
+
+```
+
+
+## Links
+Código do projeto de Lista: https://github.com/jungabriel56/react-curso-inicial
