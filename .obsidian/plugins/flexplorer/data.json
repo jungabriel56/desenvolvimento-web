@@ -67,12 +67,12 @@
     "Imagens": {
       "isPinned": false,
       "isHidden": false,
+      "sortOrder": "custom",
       "customOrder": [
         "ImagemPáginaSobre.png",
         "ImagemPáginaInicial.png",
         "ImagemComponenteComCssModule.png"
-      ],
-      "sortOrder": "custom"
+      ]
     },
     "React.md": {
       "isPinned": false,
