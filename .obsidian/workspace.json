@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "componentes.md",
+                "file": "React.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de componentes"
+              "title": "Sumário de React"
             }
           },
           {
@@ -176,11 +176,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 278
+    "width": 351.5
   },
   "left-ribbon": {
     "hiddenItems": {

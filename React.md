@@ -16,7 +16,7 @@ Eles funcionam como "ganchos" que conectam a lógica do componente aos recursos
 
 Para funcionar corretamente, os Hooks devem ser chamados **apenas no nível mais alto** do componente (não dentro de loops ou condições) e apenas dentro de componentes funcionais ou outros Hooks customizados.
 
-## Exemplos
+### Exemplos
 
 ``` tsx
 // 1) Função JS
@@ -519,5 +519,74 @@ createServer({
 
 ## Estilização
 A estilização em React pode ser diferente do CSS tradicional porque o uso de CSS global pode gerar conflitos em aplicações baseadas em componentes reutilizáveis. Uma boa prática para evitar esse problema é utilizar CSS Modules, que escopam os estilos a componentes específicos, reduzindo colisões entre classes CSS.
-### Exemplo
+### Exemplos
+Na imagem a seguir, temos um exemplo de componente com CSS Module correspondente
 ![[ImagemComponenteComCssModule.png|274]]
+Abaixo estão os blocos de código correspondentes aos arquivos da imagem
+```css
+.Container {
+  gap: 16px;
+  padding: 8px;
+  display: flex;
+}
+
+.Input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #00000025;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.Button {
+  border: none;
+  padding: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: linear-gradient(90deg, #2e8b57, #3cb371);
+}
+
+.Button:hover {
+  background: linear-gradient(90deg, #34985f, #43cd81);
+}
+
+.Button:active {
+  background: linear-gradient(90deg, #3a8d5e, #4cb27a);
+}
+```
+```tsx
+import { useState } from "react";
+import InputAddStyles from "./InputAdd.module.css"
+
+interface InputAddProps {
+  onAdd(value: string): void;
+}
+
+export const InputAdd = (props: InputAddProps) => {
+  const [value, setValue] = useState("");
+
+  const handleAdd = () => {
+    props.onAdd(value);
+    setValue("");
+  };
+
+  return (
+    <div className={InputAddStyles.Container}>
+      <input
+        value={value}
+        className={InputAddStyles.Input}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <button onClick={handleAdd} className={InputAddStyles.Button}>Adicionar</button>
+    </div>
+  );
+};
+```
+## Routing
+A seguir, vamos adicionar rotas para as páginas da aplicação utilizando a biblioteca **React Router**.
