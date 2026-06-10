@@ -590,6 +590,8 @@ export const InputAdd = (props: InputAddProps) => {
 ```
 ## Routing
 A seguir, vamos adicionar rotas para as páginas da aplicação utilizando a biblioteca **React Router**. As rotas serão a Página Inicial e a página Sobre.
+### Códigos
+#### About.tsx
 ```tsx
 import { PageLayout } from "../shared/layout/page-layout/PageLayout"
 
@@ -607,6 +609,7 @@ export const About = () => {
     )
 }
 ```
+#### Home.tsx
 ```tsx
 import { useEffect, useState } from "react";
 import { ToDoAPI, type IToDo } from "../shared/services/api/ToDoAPI";
@@ -675,6 +678,7 @@ export const Home = () => {
     
 };
 ```
+#### App.tsx
 As modificações são feitas no componente principal, o App
 ```tsx 
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
@@ -693,6 +697,7 @@ export function App() {
           <Route path='/' element={<Home />}/>
           <Route path="/sobre" element={<About />}/>
 
+		//Este tratamento é feito para o caso do usuário digitar uma rota inexistente.
           <Route path="*" element={<Navigate to='/'/>}/>
         </Routes>
         
@@ -702,6 +707,14 @@ export function App() {
 }
 
 ```
+
+### Imagens
+Fica assim:
+#### Página Inicial
+![[ImagemPáginaInicial.png]]
+#### Sobre
+![[ImagemPáginaSobre.png]]
+
 
 
 ## Links

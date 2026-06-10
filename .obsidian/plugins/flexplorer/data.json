@@ -68,6 +68,8 @@
       "isPinned": false,
       "isHidden": false,
       "customOrder": [
+        "ImagemPáginaSobre.png",
+        "ImagemPáginaInicial.png",
         "ImagemComponenteComCssModule.png"
       ],
       "sortOrder": "custom"
@@ -77,6 +79,14 @@
       "isHidden": false
     },
     "Imagens/ImagemComponenteComCssModule.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Imagens/ImagemPáginaInicial.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Imagens/ImagemPáginaSobre.png": {
       "isPinned": false,
       "isHidden": false
     }

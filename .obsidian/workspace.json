@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5f120a8855c7c4bd",
+        "id": "94e1c18230214ea2",
         "type": "tabs",
         "children": [
           {
-            "id": "81fc1b6e7876a599",
+            "id": "03077b0b2a1f8f43",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -194,10 +194,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "81fc1b6e7876a599",
+  "active": "03077b0b2a1f8f43",
   "lastOpenFiles": [
-    "SPA.md",
+    "Imagens/ImagemPáginaSobre.png",
     "React.md",
+    "Imagens/ImagemPáginaInicial.png",
+    "SPA.md",
     "npm.md",
     "Node.md",
     "useEffect sem argumentos.md",
