@@ -714,8 +714,9 @@ Fica assim:
 ![[ImagemPáginaInicial.png]]
 #### Sobre
 ![[ImagemPáginaSobre.png]]
+## Contexto de atuenticação
 
-
+## useCallback e useMemo
 
 ## Links
 Código do projeto de Lista: https://github.com/jungabriel56/react-curso-inicial
