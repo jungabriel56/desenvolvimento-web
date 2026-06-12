@@ -17,7 +17,6 @@ Eles funcionam como "ganchos" que conectam a lógica do componente aos recursos
 Para funcionar corretamente, os Hooks devem ser chamados **apenas no nível mais alto** do componente (não dentro de loops ou condições) e apenas dentro de componentes funcionais ou outros Hooks customizados.
 
 ### Exemplos
-
 ``` tsx
 // 1) Função JS
 const teste = () => {
@@ -89,7 +88,7 @@ Ao utilizar a key, o React:
 - Otimiza a performance, pois atualiza apenas os elementos modificados ao invés de re-renderizar todos os elementos.
 - Mantém o estado correto, evitando problemas como a perda de foco em inputs ou comportamento inesperado de componentes quando a ordem dos itens é alterada.
 ### Exemplo
-
+#### App.tsx
 ``` tsx
 import { useState } from "react";
 
@@ -118,7 +117,7 @@ export function App() {
 }
 ```
 ### Adição de itens dinamicamente na lista
-
+#### App.tsx
 ``` tsx
 import { useState } from "react";
 
@@ -150,6 +149,7 @@ export function App() {
 ```
 
 ### Adição de botões concluir e remover
+#### App.tsx
 ``` tsx
 import { useState } from "react";
 
@@ -393,6 +393,7 @@ Adição de event handlers (handleAdd), que são responsáveis por gerenciar e r
 
 ## useEffect
 O useEffect é um React hook que permite executar efeitos colaterais em componentes. Ele faz chamadas de API, interações com o DOM e *event listening*. Ele pode ser utilizado de 3 maneiras distintas [[useEffect sem argumentos]], [[useEffect com array vazio]] e [[useEffect com array de dependências]]
+#### App.tsx
 ```tsx
 import { useState, useEffect } from "react";
 import { InputAdd } from "./components/InputAdd";
@@ -457,6 +458,7 @@ export function App() {
 }
 
 ```
+#### server.ts
 ```tsx
 import { createServer, Model } from 'miragejs'
 
@@ -527,6 +529,7 @@ A estilização em React pode ser diferente do CSS tradicional porque o uso de C
 Na imagem a seguir, temos um exemplo de componente com CSS Module correspondente
 ![[ImagemComponenteComCssModule.png|274]]
 Abaixo estão os blocos de código correspondentes aos arquivos da imagem
+#### InputAdd.module.css
 ```css
 .Container {
   gap: 16px;
@@ -564,6 +567,7 @@ Abaixo estão os blocos de código correspondentes aos arquivos da imagem
   background: linear-gradient(90deg, #3a8d5e, #4cb27a);
 }
 ```
+#### InputAdd.tsx
 ```tsx
 import { useState } from "react";
 import InputAddStyles from "./InputAdd.module.css"
