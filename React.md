@@ -215,8 +215,9 @@ export function App() {
 }
 ```
 ## Properties (Props)
-As props são argumentos passados para componentes React. São como parâmetros de funções e podem ser de três tipos: [[Tipos Primitivos]], [[Tipos Complexos]] e [[Tipos funcionais e de Renderização]].
+Props são valores passados de um componente pai para um componente React. Elas funcionam de maneira semelhante aos parâmetros de uma função e podem receber qualquer valor válido em JavaScript, como **valores primitivos**, **objetos**, **arrays**, **funções** e **elementos React**.
 ### Arquivos após componentização
+#### App.tsx
 ```tsx
 import { useState } from "react";
 import { InputAdd } from "./components/InputAdd";
@@ -271,6 +272,7 @@ export function App() {
   );
 }
 ```
+#### InputAdd.tsx
 ```tsx
 import { useState } from "react";
 
@@ -298,6 +300,7 @@ export const InputAdd = (props: InputAddProps) => {
 }
 ```
 ## Refatorações
+#### App.tsx
 ```tsx
 import { useState } from "react";
 import { InputAdd } from "./components/InputAdd";
@@ -354,6 +357,7 @@ export function App() {
   );
 }
 ```
+#### InputAdd.tsx
 ```tsx
 import { useState } from "react";
 
