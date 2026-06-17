@@ -838,7 +838,25 @@ export const Login = () => {
 };
 ```
 ## useCallback e useMemo
-Após a implementação do Context
+- **useCallback** mantém a mesma referência de uma função entre renderizações, desde que suas dependências não mudem. Em um Context, isso evita recriar funções desnecessariamente.
+- **useMemo** mantém a mesma referência de um valor ou objeto calculado. Em um Context, ele evita recriar o objeto passado em value a cada renderização.
+Após a implementação do [[Context]], aplicamos o useCallback nas funções de login e logout
+### Código
+#### AuthContext.tsx
+```tsx
+const logout = useCallback(() => {
+        setEmail(undefined);
+        setAccessToken(undefined);
+    }, [])
+
+    const login = useCallback((email: string, password: string) => {
+        console.log(email, password)
+
+        setEmail(email);
+        setAccessToken(crypto.randomUUID())
+    }, [])
+```
+
 
 ## Links
 Código do projeto de Lista: https://github.com/jungabriel56/react-curso-inicial

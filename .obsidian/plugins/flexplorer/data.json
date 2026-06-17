@@ -5,6 +5,7 @@
       "isHidden": false,
       "sortOrder": "custom",
       "customOrder": [
+        "useCallback.md",
         "React.md",
         "Context.md",
         "componentes.md",
@@ -92,6 +93,10 @@
       "isHidden": false
     },
     "Context.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "useCallback.md": {
       "isPinned": false,
       "isHidden": false
     }
