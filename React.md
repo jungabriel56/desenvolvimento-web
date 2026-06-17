@@ -724,8 +724,121 @@ Fica assim:
 ![[ImagemPáginaSobre.png]]
 ## Aplicando o Context
 Na aplicação, o [[Context]] foi utilizado para autenticação do usuário.
+### Código
+#### App.tsx
+```tsx
+import { AppRoutes } from "./Routes";
+import { AuthProvider } from "./shared/contexts/AuthContext";
 
+
+export function App() {
+
+
+  return (
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
+}
+
+```
+#### AuthContext.tsx
+```tsx
+import { createContext, useCallback, useContext, useState } from "react";
+
+interface IAuthContextProps{
+    email: string | undefined;
+    accessToken: string | undefined;
+    
+    logout(): void
+    login(email: string, password: string): void
+}
+
+const AuthContext = createContext({} as IAuthContextProps);
+
+export const AuthProvider = ({children}: React.PropsWithChildren) => {
+
+    const [email, setEmail] = useState<string>()
+    const [accessToken, setAccessToken] = useState<string>()
+    
+    const logout = () => {
+        setEmail(undefined);
+        setAccessToken(undefined);
+    }
+
+    const login = (email: string, password: string) => {
+        console.log(email, password)
+
+        setEmail(email);
+        setAccessToken(crypto.randomUUID())
+    }
+
+    return (
+        <AuthContext.Provider value={{login, logout, accessToken, email}}>
+            {children}
+        </AuthContext.Provider>
+    );
+}
+
+export const useAuthContext = () => {
+    return useContext(AuthContext)    
+}
+
+export const useIsAuthenticated = () => {
+    const { accessToken } = useAuthContext();
+    return !!accessToken;
+}
+```
+#### Login.tsx
+```tsx
+import { useState } from 'react';
+import LoginStyles from './Login.module.css';
+import { useAuthContext } from '../../shared/contexts/AuthContext';
+
+export const Login = () => {
+	const { login } = useAuthContext();
+	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState('');
+	
+  const handleLogin = () => {
+    console.log('Entrar');
+    login(email, password);
+  }
+
+  return (
+    <div className={LoginStyles.PageContainer}>
+      <div className={LoginStyles.PageContent}>
+        <h1>
+          Login
+        </h1>
+
+        <b>Email</b>
+        <input
+          value={email}
+          className={LoginStyles.Input}
+          onChange={e => setEmail(e.target.value)}
+        />
+
+        <b>Senha</b>
+        <input
+          type='password'
+          value={password}
+          className={LoginStyles.Input}
+          onChange={e => setPassword(e.target.value)}
+        />
+
+        <br />
+
+        <button className={LoginStyles.Button} onClick={handleLogin}>
+          Entrar
+        </button>
+      </div>
+    </div>
+  );
+};
+```
 ## useCallback e useMemo
+Após a implementação do Context
 
 ## Links
 Código do projeto de Lista: https://github.com/jungabriel56/react-curso-inicial

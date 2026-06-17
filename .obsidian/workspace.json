@@ -49,8 +49,7 @@
               "title": "Context"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -185,13 +184,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Context.md",
+                "file": "React.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de Context"
+              "title": "Sumário de React"
             }
           },
           {
@@ -223,11 +222,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3113463abc3b99e0",
+  "active": "251131c3bbaf1c2e",
   "lastOpenFiles": [
+    "Context.md",
     "Tipos Primitivos.md",
     "React.md",
-    "Context.md",
     "Tipos Complexos.md",
     "componentes.md",
     "Imagens/ImagemPáginaSobre.png",
