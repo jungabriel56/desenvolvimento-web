@@ -840,6 +840,7 @@ export const Login = () => {
 ## useCallback e useMemo
 - **useCallback** mantém a mesma referência de uma função entre renderizações, desde que suas dependências não mudem. Em um Context, isso evita recriar funções desnecessariamente.
 - **useMemo** mantém a mesma referência de um valor ou objeto calculado. Em um Context, ele evita recriar o objeto passado em value a cada renderização.
+Em conjunto, eles ajudam a reduzir renderizações desnecessárias dos componentes consumidores do Context.
 Após a implementação do [[Context]], aplicamos o useCallback nas funções de login e logout
 ### Código
 #### AuthContext.tsx
