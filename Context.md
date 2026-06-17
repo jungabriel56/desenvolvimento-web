@@ -1,8 +1,12 @@
-No react, o **Context** é uma maneira de prover dados entre vários componentes sem que seja necessário criar props em cada nível da árvore. 
-O **Context** é utilizado quando uma propriedade deve ser utilizada globalmente, como: 
+No React, o **Context** é uma maneira de disponibilizar dados para componentes descendentes sem que seja necessário passar [[React#Properties (Props)|props]] explicitamente por todos os níveis intermediários da árvore.
+
+Ele pode ser utilizado quando vários componentes precisam acessar informações compartilhadas, como:
 - usuário autenticado;
-- tema claro/escuro;
+- tema claro ou escuro;
 - idioma;
 - carrinho de compras;
 - configurações da aplicação.
-A utilização global do **Context**, é uma boa prática para evitar o **prop drilling**, que é a repetição de uma propriedade em vários componentes
+
+O **Context** pode ajudar a evitar o **prop drilling**, que ocorre quando uma prop precisa atravessar vários componentes intermediários apenas para chegar ao componente que realmente a utiliza.
+
+Entretanto, o **Context** não deve ser utilizado globalmente por padrão. Para dados utilizados por componentes próximos, o uso de props geralmente continua sendo a solução mais simples e explícita.

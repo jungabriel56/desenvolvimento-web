@@ -215,7 +215,7 @@ export function App() {
 }
 ```
 ## Properties (Props)
-Props são valores passados de um componente pai para um componente React. Elas funcionam de maneira semelhante aos parâmetros de uma função e podem receber qualquer valor válido em JavaScript, como **valores primitivos**, **objetos**, **arrays**, **funções** e **elementos React**.
+Props são valores passados de um componente pai para um componente React. Elas funcionam de maneira semelhante aos parâmetros de uma função e podem receber qualquer valor válido em JavaScript, como **[[Tipos Primitivos|valores primitivos]]**, **objetos**, **arrays**, **funções** e **elementos React**.
 ### Arquivos após componentização
 #### App.tsx
 ```tsx
