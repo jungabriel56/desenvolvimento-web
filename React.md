@@ -722,7 +722,8 @@ Fica assim:
 ![[ImagemPáginaInicial.png]]
 #### Sobre
 ![[ImagemPáginaSobre.png]]
-## Contexto de atuenticação
+## Aplicando o Context
+Na aplicação, o [[Context]] foi utilizado para autenticação do usuário.
 
 ## useCallback e useMemo
 

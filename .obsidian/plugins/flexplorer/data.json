@@ -5,6 +5,7 @@
       "isHidden": false,
       "sortOrder": "custom",
       "customOrder": [
+        "Context.md",
         "React.md",
         "componentes.md",
         "JSX.md",
@@ -87,6 +88,10 @@
       "isHidden": false
     },
     "Imagens/ImagemPáginaSobre.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Context.md": {
       "isPinned": false,
       "isHidden": false
     }
