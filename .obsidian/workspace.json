@@ -11,10 +11,14 @@
             "id": "251131c3bbaf1c2e",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Visualização em gráfico"
+              "type": "markdown",
+              "state": {
+                "file": "React.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "React"
             }
           },
           {
@@ -194,13 +198,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "useCallback.md",
+                "file": "React.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de useCallback"
+              "title": "Sumário de React"
             }
           },
           {
@@ -232,11 +236,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ada552fc41db93dc",
+  "active": "251131c3bbaf1c2e",
   "lastOpenFiles": [
+    "useCallback.md",
     "React.md",
     "Tipos funcionais e de Renderização.md",
-    "useCallback.md",
     "Context.md",
     "Tipos Primitivos.md",
     "Tipos Complexos.md",
