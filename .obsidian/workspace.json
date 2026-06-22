@@ -63,7 +63,8 @@
               "title": "Context"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -198,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "React.md",
+                "file": "Tipos Complexos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Sumário de React"
+              "title": "Sumário de Tipos Complexos"
             }
           },
           {
@@ -236,12 +237,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ada552fc41db93dc",
+  "active": "03077b0b2a1f8f43",
   "lastOpenFiles": [
-    "useCallback.md",
-    "React.md",
-    "Tipos funcionais e de Renderização.md",
     "Context.md",
+    "React.md",
+    "useCallback.md",
+    "Tipos funcionais e de Renderização.md",
     "Tipos Primitivos.md",
     "Tipos Complexos.md",
     "componentes.md",
